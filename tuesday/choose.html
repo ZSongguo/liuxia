@@ -1,0 +1,35 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-歌曲选择</title> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+	</head> 
+	<body onload="test()"> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="../index.html";
+					}
+				}
+		</script> 
+		<p>选一首或者几首歌来听吧！</p> 
+		<br> <b><p>张杰-经典咏流传</p></b> 
+		<audio src="../music/mxt.mp3" controls title="张杰-经典咏流传"></audio> 
+		<br> 
+		<br> 
+		<br><b><p>时代少年团-朱雀</p></b> 
+		<audio src="../music/zq.mp3" controls title="时代少年团-朱雀"></audio> 
+		<br> 
+		<br> 
+		<br><b><p>盘尼西林-再谈记忆</p></b> 
+		<audio src="../music/sayitagain.mp3" controls title="盘尼西林 - 再谈记忆"></audio> 
+		<br> 
+		<br> <a href="afternoon.html"><button>返回</button></a>  
+	</body>
+</html>

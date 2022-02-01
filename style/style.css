@@ -1,0 +1,20 @@
+body {font-family: MiSans;background-color: #0081FF;text-align: center;}
+button {font-family: MiSans;background-color: #FFFFFF; font-size: 28px;border: 2px solid #0081FF;border-radius: 6px; color: #0081FF;transition-duration: 0.5s;} 
+p {font-size: 24px; color: #000000;font-family: MiSans;}
+b {font-family: MiSansBold;}
+input {font-family: MiSans;background-color: #FFFFFF; font-size:24px;border: 2px solid #0081FF;border-radius: 6px; color: #0081FF;}
+@font-face
+{
+    font-family: MiSans;
+    src: url(fonts/MiSans-Normal.ttf);
+}
+@font-face
+{
+    font-family: MiSansBold;
+    src: url(fonts/MiSans-Bold.ttf);
+    font-weight:bold;
+}
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);font-family: MiSans;background-color: #FFFFFF; font-size: 28px;color: #0081FF;border: 2px solid #0081FF;border-radius: 6px;
+
+}

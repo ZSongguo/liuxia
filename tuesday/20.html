@@ -1,0 +1,43 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-体育课</title> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+	</head> 
+	<body onload="test()"> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="../index.html";
+					}
+				}
+		</script> 
+		<p id="lx">我喊二十班你们喊到啊！<br>二十班！！！！！！！！！！</p> <a href="afternoon.html"><button id="stop"></button></a> 
+		<br> 
+		<br><button onclick="high()" id="high">大声喊</button> 
+		<br> 
+		<br><button onclick="low()" id="low">小声喊</button> 
+		<script>
+			function high(){
+				document.getElementById('lx').innerHTML="好！！！我们现在要练习……（省略200字）知道了吗？";
+				document.getElementById('low').innerHTML="";
+				document.getElementById('high').innerHTML="";
+				document.getElementById('stop').innerHTML="让体育老师教";
+			}
+		</script> 
+		<script>
+			function low(){
+				document.getElementById('lx').innerHTML="太小声了！！！再来一遍！<br>二十班！！！！！<br><b>到！！！！！！！！！！</b>";
+				document.getElementById('low').innerHTML="";
+				document.getElementById('high').innerHTML="";
+				document.getElementById('stop').innerHTML="让体育老师教";
+			}
+		</script>  
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<title>Teacher Liuxia-周一</title> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+	</head> 
+	<body onload="test()"> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="../index.html";
+					}
+				}
+		</script> 
+		<p>周一到了，上午有升旗仪式，要去看他们扫公区吗？</p> <a href="monday-clean.html"><button>去</button></a> 
+		<br> 
+		<br> <a href="sq.html"><button>算了，直接去升旗</button></a>  
+	</body>
+</html>

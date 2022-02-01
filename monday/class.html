@@ -1,0 +1,41 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-上课</title> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+	</head> 
+	<body onload="test()"> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="../index.html";
+					}
+				}
+		</script> 
+		<p id="1">(上课中)这道题，我在这块黑板上讲过!!!!!(非常用力地敲黑板)(请自行脑补)</p> <button id="b" onclick="yes()"></button> 
+		<br><button onclick="changetxt()" id="bt">Next</button> 
+		<br><button id="btn" onclick="no()"></button> 
+		<script>
+			function changetxt(){
+				document.getElementById("1").innerText="(快要下课了，下节是信息课)要拖堂吗?";
+				document.getElementById("b").innerHTML="拖";
+				document.getElementById("btn").innerHTML="不拖";
+				document.getElementById("bt").innerHTML="";
+			}
+		</script> 
+		<script>
+			function no(){
+				window.location.href="smm.html";
+			}
+			function yes(){
+				window.location.href="smm2.html";
+			}
+		</script>  
+	</body>
+</html>

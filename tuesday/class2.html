@@ -1,0 +1,45 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-数学课</title> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+	</head> 
+	<body onload="test()"> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="../index.html";
+					}
+				}
+		</script> 
+		<p id="class">上数学课</p> <button onclick="start()" id="next">Next</button> 
+		<br><button id="next2" onclick="next()"></button> 
+		<br> 
+		<br><button id="next3" onclick="classover()"></button> 
+		<script>
+			function start(){
+				document.getElementById('class').innerHTML="我觉得这个同学的方法<br><b>比较（jiǎo）好，我也比较（jiǎo）推荐</b>";
+				document.getElementById('next').innerHTML="";
+				document.getElementById('next2').innerHTML="Next";
+			}
+		</script> 
+		<script>
+			function next(){
+				document.getElementById('class').innerHTML="（过了一会）好，自由下课！";
+				document.getElementById('next3').innerHTML="下课";
+				document.getElementById('next2').innerHTML="";
+			}
+		</script> 
+		<script>
+			function classover(){
+				window.location.href="classover.html";
+			}
+		</script>  
+	</body>
+</html>

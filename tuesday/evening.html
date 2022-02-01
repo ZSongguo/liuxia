@@ -1,0 +1,55 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-夕会</title> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+	</head> 
+	<body onload="test()"> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="../index.html";
+					}
+				}
+		</script> 
+		<p id="xihui"></p> <button id="start" onclick="xh()">开始夕会</button> 
+		<br> 
+		<br><button id="fabiaoyijian" onclick="fbyj()"></button> 
+		<br> 
+		<br><button id="no" onclick="no()"></button> 
+		<br> 
+		<br><a href="reading.html"><button id="stop"></button></a> 
+		<script>
+			function xh(){
+				document.getElementById('start').innerHTML="";
+				document.getElementById('xihui').innerHTML="(某班长）现在夕会啊……<br>今天呢，（不断左右摇摆)(此处省略500字）";
+				document.getElementById('fabiaoyijian').innerHTML="发表意见";
+				document.getElementById('no'). innerHTML="不发表意见";
+			}
+		</script> 
+		<script>
+			function fbyj(){
+				document.getElementById('xihui').innerHTML="(走上讲台，拿起麦克风)你们就是这样对待夕会的吗？！我对你们最近的表现很失望！！！(此处省略2000字)(讲完了)科代表带领晚读。";
+				document.getElementById('fabiaoyijian').innerHTML="";
+				document.getElementById('no').innerHTML="";
+				document.getElementById('stop'). innerHTML="离开";
+				document.getElementById('fabiaoyijian').innerHTML="";
+				document.getElementById('stop'). innerHTML="离开";
+			}
+		</script> 
+		<script>
+			function no(){
+				document.getElementById('no').innerHTML="";
+				document.getElementById('xihui').innerHTML="科代表带领晚读。";
+				document.getElementById('stop'). innerHTML="离开";
+				document.getElementById('fabiaoyijian').innerHTML="";
+			}
+		</script>  
+	</body>
+</html>

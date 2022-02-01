@@ -1,0 +1,31 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<title>Teacher Liuxia-升旗</title> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+	</head> 
+	<body onload="test()"> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="../index.html";
+					}
+				}
+		</script> 
+		<p id="sqtext">怎么还有这么多人没来?!</p> <button onclick="sqnext()" id="sq">Next</button> <a href="" id="sqbck"><button id="sqback"></button></a> 
+		<script>
+			function sqnext(){
+				document.getElementById('sqbck').href="class.html";
+				document.getElementById('sqback').innerText="回教室";
+				document.getElementById('sq').innerHTML="";
+				document.getElementById('sqtext').innerText="算了(升旗中……)";
+			}
+		</script>  
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-DevTools开发者管理开发工具</title> 
+		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="style/style.css"> 
+		<script src="jQuery_main.js"></script> 
+	</head> 
+	<body onload="test()"> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="index.html";
+					}
+				}
+		</script> 
+		<br><button onclick="deleteLSKC()">清空尻币</button> 
+		<br> 
+		<br><button onclick="addtestlocalStorage()">创建用于测试的localStorge</button> 
+		<br> 
+		<br><button onclick="clearlocalStorage()">清空所有的localStorage</button> 
+		<br> 
+		<br><button onclick="killCSS()">禁用CSS</button> 
+		<br> 
+		<br><button onclick="refresh()">Refresh</button> 
+		<script>
+			function deleteLSKC(){
+				localStorage.removeItem("kaocoin");
+				kc = localStorage.getItem("kaocoin");
+				window.alert("操作成功！Data:"+kc);
+			}
+		</script> 
+		<script>
+			function clearlocalStorage(){
+				localStorage.clear();
+				window.alert("操作成功！");
+			}
+		</script> 
+		<script>
+			function addtestlocalStorage(){
+				localStorage.setItem("AlocalStorageForTest", "This is a localStorage for test.");
+				var test = localStorage.getItem("AlocalStorageForTest");
+				window.alert("操作成功！Data:"+test);
+			}
+		</script> 
+		<script>
+			function refresh(){
+				window.location.href="devtools.html";
+				window.alert('操作成功！');
+			}
+		</script> 
+		<script>
+			function killCSS(){
+				window.alert('操作成功！');
+				for(var i=0;
+				i<document.styleSheets.length;
+				i++){
+					document.styleSheets[i].disabled = "disable";
+				}
+			}
+		</script>  
+	</body>
+</html>

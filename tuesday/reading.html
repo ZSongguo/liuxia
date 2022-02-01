@@ -1,0 +1,38 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-晚读</title> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+	</head> 
+	<body onload="test()"> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="../index.html";
+					}
+				}
+		</script> 
+		<p id="reading">在教室外面巡查</p> <button onclick="read()" id="btn">进去教室看看</button> 
+		<br> 
+		<br><button onclick="end()" id="end"></button> 
+		<script>
+			function end(){
+				window.alert("周二已结束，您可以继续游玩周三！");
+				window.location.href="../game.html";
+			}
+		</script> 
+		<script>
+			function read(){
+				document.getElementById('reading').innerHTML="拍了拍一个同学的背<br>“坐直一点”(提醒)";
+				document.getElementById('btn').innerHTML="";
+				document.getElementById('end').innerHTML="离开";
+			}
+		</script>  
+	</body>
+</html>

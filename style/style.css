@@ -2,7 +2,7 @@ body {font-family: MiSans;background-color: #0081FF;text-align: center;}
 button {font-family: MiSans;background-color: #FFFFFF; font-size: 28px;border: 2px solid #0081FF;border-radius: 6px; color: #0081FF;transition-duration: 0.5s;} 
 p {font-size: 24px; color: #000000;font-family: MiSans;}
 b {font-family: MiSansBold;}
-input {font-family: MiSans;background-color: #FFFFFF; font-size:24px;border: 2px solid #0081FF;border-radius: 6px; color: #0081FF;}
+input {font-family: MiSans;background-color: #FFFFFF; font-size:26px;border: 2px solid #0081FF;border-radius: 6px; color: #0081FF;text-align: center;}
 @font-face
 {
     font-family: MiSans;

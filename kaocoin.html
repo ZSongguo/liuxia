@@ -8,7 +8,15 @@
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
 		<script src="jQuery_main.js"></script> 
 	</head> 
-	<body onload="test()"> 
+	<body onload="test(),refresh()"> 
+		<p id="kaocoinview">当前尻币数量： 个</p> 
+		<script>
+			function refresh(){
+				window.setInterval("refresh()",100);
+				var kcv = localStorage.getItem("kaocoin");
+				document.getElementById('kaocoinview').innerHTML="当前尻币数量: "+kcv+" 个";
+			}
+		</script> 
 		<script>
 			function test(){
 				var	iflogin = localStorage.getItem("iflogin");

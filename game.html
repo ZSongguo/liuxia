@@ -8,7 +8,19 @@
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
 		<script src="jQuery_main.js"></script> 
 	</head> 
-	<body onload="test()"> <!--德艺双馨--> 
+	<body onload="test()"> <!--德艺双馨--> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
+		<script>
+			kcview = localStorage.getItem("kaocoin");
+			window.setInterval("changeKC()",1000);
+			function changeKC(){
+				document.getElementById('kaocoinView').innerHTML="当前尻币数量为: "+ kcview +" 个";
+			}
+		</script> 
+		<script>
+			function addKC(){
+				localStorage.setItem("kaocoin", +kcview+2);
+			}
+		</script> 
 		<script>
 			function test(){
 				var	iflogin = localStorage.getItem("iflogin");

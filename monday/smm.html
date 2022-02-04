@@ -8,7 +8,19 @@
 		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
 		<script src="../jQuery_main.js"></script> 
 	</head> 
-	<body onload="test()"> 
+	<body onload="test()"> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
+		<script>
+			kcview = localStorage.getItem("kaocoin");
+			window.setInterval("changeKC()",1000);
+			function changeKC(){
+				document.getElementById('kaocoinView').innerHTML="当前尻币数量为: "+ kcview +" 个";
+			}
+		</script> 
+		<script>
+			function addKC(){
+				localStorage.setItem("kaocoin", +kcview+2);
+			}
+		</script> 
 		<script>
 			function test(){
 				var	iflogin = localStorage.getItem("iflogin");
@@ -18,7 +30,7 @@
 					}
 				}
 		</script> 
-		<p>上信息课……</p> <a href="evening.html"><button>晚上(去视察宿舍)</button></a> 
+		<p>上信息课……</p> <a href="evening.html"><button onclick="addKC()">晚上(去视察宿舍)</button></a> 
 		<br> 
 		<br><a href="backhome.html"><button>回家</button></a>  
 	</body>

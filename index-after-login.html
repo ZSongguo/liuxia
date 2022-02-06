@@ -12,13 +12,10 @@
 	</head> 
 	<body onload="test()"> <!--德馨楼--> 
 		<script>
-			window.alert('现在有新域名辣！liuxia.pages.dev！使用Cloudflare Pages服务搭建，具有加速效果（也许吧），原来的页面也可以继续访问，不过可能会慢一点。（新域名有些时候好像不能访问？？？似乎要用火狐浏览器才能访问？）\n点击主页链接跳转(◍•ᴗ•◍)');
-		</script> 
-		<script>
 			function test(){
 				var	iflogin = localStorage.getItem("iflogin");
 				if (iflogin == "yes"){
-					window.alert("欢迎游玩，注册用户 user ！模拟器功能未完全开发，持续更新中！\n本网站制作时不考虑IE浏览器的兼容问题，请不要使用IE浏览此网站，以免出现异常！推荐使用Firefox或Chrome浏览器浏览");
+					window.alert("欢迎游玩，注册用户 user ！模拟器功能未完全开发，持续更新中！\n本网站制作时不考虑IE浏览器的兼容问题，请不要使用IE浏览此网站，以免出现异常！推荐使用Firefox或Chrome浏览器浏览\n重新部署了域名，现在有两个域名可以选择辣！");
 				}
 				else{
 					window.location.href="index.html";
@@ -39,11 +36,16 @@
 		</noscript> 
 		<br> 
 		<img src="favicon.png" alt="Teacher Liuxia icon"> 
-		<h1 id="liuxia">Teacher Liuxia<p>1.2.6</p></h1> 
-		<p>这是一个模拟器<br><br> 欢迎游玩！</p> <a href="https://liuxia.pages.dev/"><b>点我跳转新的加速域名！</b></a> 
+		<h1 id="liuxia">Teacher Liuxia</h1> 
+		<p>1.2.7</p> 
+		<p title="德馨楼">这是一个模拟器<br><br> 欢迎游玩！</p><a href="https://liuxia.vercel.app/"><b>部署在Vercel上的域名（推荐）</b></a> 
 		<br> 
-		<br><a href="kaocoin.html">点我进入“尻币”设置页面（还没开发完全呢！）</a> 
+		<br> <a href="https://liuxia.pages.dev/">部署在Cloudflare Pages上的域名</a> 
+		<br> 
+		<br> 
 		<div> <a href="game.html"><button><b>Play Now</b></button></a> 
+			<br> 
+			<br> <a href="kaocoin.html"><button><img src="image/kaocoin.png" alt="KaoCoin" height="24px"> 尻币</button></a> 
 			<br> 
 			<br> <a href="talk.html"><button>评论区</button></a> 
 			<br> 
@@ -52,17 +54,12 @@
 			<br><a href="something.html"><button>资源收集</button></a> 
 			<br> 
 			<br><a href="zsg.html"><button>关于作者</button><br><br></a> <b><a href="https://wwr.lanzoui.com/b030o9suf">手机APP版已经上线(虽然只是一个套壳网页应用)，欢迎点我下载体验! 提取码:dyta</a></b> 
-			<br><span id="busuanzi_container_site_uv"> 本站访客数<span id="busuanzi_value_site_uv"></span>人次 |</span><span id="busuanzi_container_page_pv"> 本页面总阅读量<span id="busuanzi_value_page_pv"></span>次 </span> <b><p style="font-size: 16px;"><a href="devtools.html">开发工具</a></p></b> <b><p style="font-size: 14px;"><a href="ideas.html">想法征集</a></p></b> 
-			<p style="font-size: 12px;"><a href="https://github.com/ZSongguo/liuxia">此项目的GitHub地址</a></p> 
-			<p style="font-size: 12px;"><a href="thank.html">感谢列表</a></p> 
-			<h5 id="time"></h5> 
-			<h6 id="dexin">Copyright © 2021-2022 砸松果</h6> 
-			<script>
-				window.setInterval("time()",1000);
-				function time(){
-					document.getElementById('time').innerHTML="当前系统时间是 "+Date();
-				}
-			</script> 
+			<br><span id="busuanzi_container_site_uv"> 本站访客数<span id="busuanzi_value_site_uv"></span>人次 <b><p style="font-size: 16px;"><a href="devtools.html">开发工具</a></p></b> <b><p style="font-size: 14px;"><a href="ideas.html">想法征集</a></p></b> <p style="font-size: 12px;"><a href="https://github.com/ZSongguo/liuxia">此项目的GitHub地址</a></p> <p style="font-size: 12px;"><a href="thank.html">感谢列表</a></p> <h5 id="time"></h5> <h6 id="dexin">Copyright © 2021-2022 砸松果</h6> <script>
+					window.setInterval("time()",1000);
+					function time(){
+						document.getElementById('time').innerHTML="当前系统时间是 "+Date();
+					}
+				</script> </span> 
 		</div>  
 	</body>
 </html>

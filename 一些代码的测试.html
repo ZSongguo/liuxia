@@ -3,12 +3,21 @@
 	<head> 
 		<meta charset="UTF-8"> 
 		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Teacher Liuxia-kctest</title> 
+		<title>Teacher Liuxia-test</title> 
 		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
 		<script src="jQuery_main.js"></script> 
 	</head> 
-	<body> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
+	<body onload="test()"> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="index.html";
+					}
+				}
+		</script> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
 		<script>
 			kcview = localStorage.getItem("kaocoin");
 			window.setInterval("changeKC()",1000);
@@ -20,6 +29,15 @@
 			function addKC(){
 				localStorage.setItem("kaocoin", +kcview+2);
 			}
-		</script> <button onclick="addKC()">kctest</button>  
+		</script> <button onclick="addKC()">kctest</button> 
+		<br> 
+		<br><button onclick="changeToLX()">test LX</button> <!--KC to LX--> 
+		<script>
+			function changeToLX(){
+				liuxia = localStorage.getItem("kaocoin");
+				lxcount = +liuxia * 0.1;
+				window.alert(lxcount);
+			}
+		</script>  
 	</body>
 </html>

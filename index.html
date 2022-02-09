@@ -5,6 +5,9 @@
 		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
 		<title>Teacher Liuxia-登录</title> 
 		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
+		<script src="https://cdn.bootcdn.net/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script> 
+		<script src="https://cdn.jsdelivr.net/npm/js-base64@3.7.2/base64.min.js"></script> 
+		<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script> 
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
 		<script src="jQuery_main.js"></script> 
 		<script>
@@ -12,12 +15,14 @@
 			if (iflogin == "yes"){
 				window.location.href="index-after-login.html";
 			}
-		</script> <!--其实密码就在下面的if语句里！--> 
+		</script> <!--密码经过了MD5和SHA1多层加密😅--> 
 		<script>
 			function check(){
-				var un = document.forms["login"]["username"].value;
-				var pw = document.forms["login"]["password"].value;
-				if (un == "000000" && pw == "000000"){
+				var un = md5(document.forms["login"]["username"].value);
+				var pw = md5(document.forms["login"]["password"].value);
+				var unv = sha1(md5(sha1(sha1(sha1(Base64.encode(un))))));
+				var pwv = sha1(md5(sha1(sha1(sha1(Base64.encode(pw))))));
+				if (unv == "e2ec8bb5d4202eb8f586c2cd91f6aeb9440cf6fb" && pwv == unv){
 					localStorage.setItem("iflogin", "yes");
 					iflogin = localStorage.getItem("iflogin");
 					window.location.href="index-after-login.html";
@@ -27,11 +32,10 @@
 				}
 			}
 		</script> 
+		<noscript> <h1>请启用JavaScript以正常访问此页面！！！ 
+		</noscript> 
 	</head> 
-	<body> 
-		<noscript> 
-			<h1>请启用JavaScript以正常访问此页面！！！</h1> 
-		</noscript> <b><p>请登录以进入网站！</p></b> 
+	<body> <b><p>请登录以进入网站！</p></b> 
 		<form name="login"> 
 			<p>用户名</p> 
 			<input type="text" name="username" required> 
@@ -41,7 +45,7 @@
 			<input type="password" name="password" required> 
 			<br> 
 			<br> 
-			<input type="button" onclick="check()" value="登录"> 
+			<input type="button" onclick="check()" value="登录" id="loginButton"> 
 		</form>  
 	</body>
 </html>

@@ -4,25 +4,25 @@
 		<meta charset="UTF-8"> 
 		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
 		<title>Teacher Liuxia-登录</title> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script> 
 		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
-		<script src="https://cdn.bootcdn.net/ajax/libs/js-sha1/0.6.0/sha1.min.js"></script> 
-		<script src="https://cdn.jsdelivr.net/npm/js-base64@3.7.2/base64.min.js"></script> 
-		<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script> 
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
 		<script src="jQuery_main.js"></script> 
+	</head> 
+	<body> 
 		<script>
 			var	iflogin = localStorage.getItem("iflogin");
 			if (iflogin == "yes"){
 				window.location.href="index-after-login.html";
 			}
-		</script> <!--密码经过了MD5和SHA1多层加密😅--> 
+		</script> <!--密码经过了SHA256多层加密😅--> 
 		<script>
 			function check(){
-				var un = md5(document.forms["login"]["username"].value);
-				var pw = md5(document.forms["login"]["password"].value);
-				var unv = sha1(md5(sha1(sha1(sha1(Base64.encode(un))))));
-				var pwv = sha1(md5(sha1(sha1(sha1(Base64.encode(pw))))));
-				if (unv == "e2ec8bb5d4202eb8f586c2cd91f6aeb9440cf6fb" && pwv == unv){
+				var u = document.forms["login"]["username"].value;
+				var p = document.forms["login"]["password"].value;
+				var un = sha256(sha256(u));
+				var pw = sha256(sha256(p));
+				if (un === "27bfaa8f76fe30db4d3d2fec408d0b29a772bdd3bf5ee330951233473d94d0e9" && pw === un){
 					localStorage.setItem("iflogin", "yes");
 					iflogin = localStorage.getItem("iflogin");
 					window.location.href="index-after-login.html";
@@ -32,17 +32,14 @@
 				}
 			}
 		</script> 
-		<noscript> <h1>请启用JavaScript以正常访问此页面！！！ 
-		</noscript> 
-	</head> 
-	<body> <b><p>请登录以进入网站！</p></b> 
+		<noscript> 
+			<h1>请启用JavaScript以正常访问此页面！！！</h1> 
+		</noscript> <b><p>请登录以进入网站！</p></b> 
 		<form name="login"> 
-			<p>用户名</p> 
-			<input type="text" name="username" required> 
+			<input type="text" name="username" placeholder="用户名" required> 
 			<br> 
 			<br> 
-			<p>密码</p> 
-			<input type="password" name="password" required> 
+			<input type="password" name="password" placeholder="密码" required> 
 			<br> 
 			<br> 
 			<input type="button" onclick="check()" value="登录" id="loginButton"> 

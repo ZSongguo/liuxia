@@ -1,0 +1,58 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-夕会</title> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+	</head> 
+	<body onload="test()"> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
+		<script>
+			kcview = localStorage.getItem("kaocoin");
+			window.setInterval("changeKC()",1000);
+			function changeKC(){
+				document.getElementById('kaocoinView').innerHTML="当前尻币数量为: "+ kcview +" 个";
+			}
+		</script> 
+		<script>
+			function addKC(){
+				localStorage.setItem("kaocoin", +kcview+2);
+			}
+		</script> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="../index.html";
+					}
+				}
+		</script> 
+		<script>
+			function next(){
+				document.getElementById('BullshitSharing').innerHTML="（一大坨话）你们这样<b>闭车造门</b>是不行的！！！！！<br>（下面都在偷笑）";
+				document.getElementById('nextBullshit').innerHTML="";
+				document.getElementById('nextnextBullshit').innerHTML="离开";
+			}
+		</script> 
+		<script>
+			function talkingAboutBullshit(){
+				document.getElementById('BullshitSharing').innerHTML="（走上讲台）我对你们最近的学习态度很不满意！！！";
+				document.getElementById('bullshit').innerHTML="";
+				document.getElementById('nextBullshit').innerHTML="Next";
+			}
+		</script> 
+		<script>
+			function jumpout(){
+				window.location.href="havealook.html";
+			}
+		</script> 
+		<p id="BullshitSharing">现在是夕会……</p><button onclick="talkingAboutBullshit(),addKC()" id="bullshit">发表意见</button> 
+		<br> 
+		<br><button id="nextBullshit" onclick="next()"></button> 
+		<br> 
+		<br><button id="nextnextBullshit" onclick="jumpout()"></button>  
+	</body>
+</html>

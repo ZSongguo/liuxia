@@ -1,0 +1,53 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-视察</title> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+	</head> 
+	<body onload="test()"> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
+		<script>
+			kcview = localStorage.getItem("kaocoin");
+			window.setInterval("changeKC()",1000);
+			function changeKC(){
+				document.getElementById('kaocoinView').innerHTML="当前尻币数量为: "+ kcview +" 个";
+			}
+		</script> 
+		<script>
+			function addKC(){
+				localStorage.setItem("kaocoin", +kcview+2);
+			}
+		</script> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="../index.html";
+					}
+				}
+		</script> 
+		<p id="look"></p> <button id="startLooking" onclick="intoClassroom()"></button> 
+		<br> 
+		<br><button onclick="goout()" id="goout"></button> 
+		<script>
+			document.getElementById('startLooking').innerHTML="走进教室";
+			document.getElementById('look').innerHTML="现在自然是每天少不了的视察环节了😅";
+		</script> 
+		<script>
+			function intoClassroom(){
+				document.getElementById('startLooking').innerHTML="";
+				document.getElementById('look').innerHTML="在教室门口盯着……";
+				document.getElementById('goout').innerHTML="离开";
+			}
+		</script> 
+		<script>
+			function goout(){
+				window.location.href="back home.html";
+			}
+		</script>  
+	</body>
+</html>

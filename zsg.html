@@ -7,17 +7,13 @@
 		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
 		<script src="jQuery_main.js"></script> 
+		<script src="script/checkLogin.js"></script> 
+		<script src="script/addKaoCoin.js"></script> 
 	</head> 
 	<body onload="test()"> <!--德技双馨--> 
-		<script>
-			function test(){
-				var	iflogin = localStorage.getItem("iflogin");
-				if (iflogin == "yes"){}
-					else{
-						window.location.href="index.html";
-					}
-				}
-		</script> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
+		</noscript> 
 		<script>
 			$(document).ready(function(){
 				$("#zsg").mouseenter(function(){

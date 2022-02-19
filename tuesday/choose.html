@@ -6,30 +6,15 @@
 		<title>Teacher Liuxia-歌曲选择</title> 
 		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
 		<script src="../jQuery_main.js"></script> 
+		<script src="../script/checkLogin.js"></script> 
+		<script src="../script/showKaoCoin.js"></script> 
+		<script src="../script/addKaoCoin.js"></script> 
 		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
 	</head> 
-	<body onload="test()"> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
-		<script>
-			kcview = localStorage.getItem("kaocoin");
-			window.setInterval("changeKC()",1000);
-			function changeKC(){
-				document.getElementById('kaocoinView').innerHTML="当前尻币数量为: "+ kcview +" 个";
-			}
-		</script> 
-		<script>
-			function addKC(){
-				localStorage.setItem("kaocoin", +kcview+2);
-			}
-		</script> 
-		<script>
-			function test(){
-				var	iflogin = localStorage.getItem("iflogin");
-				if (iflogin == "yes"){}
-					else{
-						window.location.href="../index.html";
-					}
-				}
-		</script> 
+	<body onload="test()"> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=../errorjs.html"> 
+		</noscript> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
 		<p>选一首或者几首歌来听吧！</p> 
 		<br> <b><p>张杰-经典咏流传</p></b> 
 		<audio src="../music/mxt.mp3" controls title="张杰-经典咏流传"></audio> 

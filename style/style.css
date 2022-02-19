@@ -102,3 +102,9 @@ button:hover {
 a {
 	text-decoration: none;
 }
+
+#kaocoinView {
+	position:fixed;
+	bottom: 0;
+	left: 1%;
+}

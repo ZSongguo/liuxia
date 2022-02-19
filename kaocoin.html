@@ -7,24 +7,19 @@
 		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
 		<script src="jQuery_main.js"></script> 
+		<script src="script/checkLogin.js"></script> 
 	</head> 
-	<body onload="test(),refresh()"> 
+	<body onload="test()"> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
+		</noscript> 
 		<p id="kaocoinview">当前尻币数量： 个</p> 
 		<script>
+			window.setInterval("refresh()",100);
 			function refresh(){
-				window.setInterval("refresh()",100);
 				var kc = localStorage.getItem("kaocoin");
 				document.getElementById('kaocoinview').innerHTML="当前尻币数量: "+kc+" 个";
 			}
-		</script> 
-		<script>
-			function test(){
-				var	iflogin = localStorage.getItem("iflogin");
-				if (iflogin == "yes"){}
-					else{
-						window.location.href="index.html";
-					}
-				}
 		</script> <small id="tip">需要先启用尻币才能使用此功能（尻币数量为"null"即为未启用状态）</small> 
 		<br><button onclick="kao()" id="startkc">启用尻币</button> 
 		<br> 

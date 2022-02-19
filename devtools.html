@@ -7,25 +7,14 @@
 		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
 		<script src="jQuery_main.js"></script> 
+		<script src="script/checkLogin.js"></script> 
+		<script src="script/showKaoCoin.js"></script> 
+		<script src="script/addKaoCoin.js"></script> 
 	</head> 
-	<body onload="test(),kaov()"> 
-		<p id="kaocoinview">当前尻币数量： 个</p> 
-		<script>
-			window.setInterval("kaov()",100);
-			function kaov(){
-				var kcv = localStorage.getItem("kaocoin");
-				document.getElementById('kaocoinview').innerHTML="当前尻币数量: "+kcv+" 个";
-			}
-		</script> 
-		<script>
-			function test(){
-				var	iflogin = localStorage.getItem("iflogin");
-				if (iflogin == "yes"){}
-					else{
-						window.location.href="index.html";
-					}
-				}
-		</script> <!--?xml version="1.0" encoding="UTF-8"?--> 
+	<body onload="test()"> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
+		</noscript> <small id="kaocoinView">当前尻币数量： 个</small> <!--?xml version="1.0" encoding="UTF-8"?--> 
 		<svg width="24" height="24" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"> <g> 
 				<rect width="48" height="48" fill="white" fill-opacity="0.01" stroke-linejoin="round" stroke-width="4" stroke="none" fill-rule="evenodd" /> 
 				<g transform="translate(4.000000, 4.000000)"> 
@@ -44,7 +33,7 @@
 		</svg> 
 		<br> 
 		<br><button onclick="deleteLSKC()">清空尻币</button> 
-		<br>
+		<br> 
 		<br> <button>空按钮</button> 
 		<br> 
 		<br><button onclick="addtestlocalStorage()">创建用于测试的localStorge</button> 

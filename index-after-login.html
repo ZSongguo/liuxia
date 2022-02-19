@@ -9,19 +9,10 @@
 		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 		<script src="jQuery_main.js"></script><!-- Cloudflare Web Analytics --> 
 		<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{" token": "da4da8bd290b46488f33569f8939910e"}"></script><!-- End Cloudflare Web Analytics --> 
+		<script src="script/checkLogin.js"></script> 
+		<script src="script/addKaoCoin.js"></script> 
 	</head> 
 	<body onload="test()"> <!--德馨楼--> 
-		<script>
-			function test(){
-				var	iflogin = localStorage.getItem("iflogin");
-				if (iflogin == "yes"){
-					window.alert("欢迎游玩，注册用户 user ！模拟器功能未完全开发，持续更新中！\n本网站制作时不考虑IE浏览器的兼容问题，请不要使用IE浏览此网站，以免出现异常！推荐使用Firefox或Chrome浏览器浏览\n重新部署了域名，现在有两个域名可以选择辣！");
-				}
-				else{
-					window.location.href="index.html";
-				}
-			}
-		</script> 
 		<script>
 			$(document).ready(function(){
 				$("#dexin").mouseenter(function(){
@@ -32,12 +23,16 @@
 			);
 		</script> 
 		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
+		</noscript> 
+		<noscript> 
 			<p style="color: red;"><b>请启用JavaScript以正常体验游戏功能！！！</b></p> 
 		</noscript> 
 		<br> 
 		<img src="favicon.png" alt="Teacher Liuxia icon" width="85%"> 
 		<h1 id="liuxia">Teacher Liuxia</h1> 
-		<p title="德馨楼">这是一个模拟器</p><p>欢迎游玩！</p><a href="https://liuxia.vercel.app/"><b>部署在Vercel上的域名（推荐）（极速体验）</b></a> 
+		<p title="德馨楼">这是一个模拟器</p> 
+		<p>欢迎游玩！</p><a href="https://liuxia.vercel.app/"><b>部署在Vercel上的域名（推荐）（极速体验）</b></a> 
 		<br> 
 		<br> <a href="https://liuxia.pages.dev/">部署在Cloudflare Pages上的域名</a> 
 		<br> 
@@ -53,6 +48,9 @@
 				<div class="dropdown-content"> <a href="https://wwr.lanzoui.com/b030o9suf">手机版APP（提取码:dyta）</a> <a href="something.html">资源收集</a> <a href="talk.html">评论区</a> <a href="ideas.html">想法征集</a> <a href="thank.html">感谢列表</a> <a href="zsgzsg.html">关于作者</a> 
 				</div> 
 			</div> 
+			<br> 
+			<br><b><span id="jinrishici-sentence">正在加载今日诗词....</span></b> 
+			<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script> 
 			<br> 
 			<br><span id="busuanzi_container_site_uv"> 本站访客数<span id="busuanzi_value_site_uv"></span>人次 <b><p style="font-size: 16px;"><a href="devtools.html">开发工具</a></p></b> <p style="font-size: 12px;"><a href="https://github.com/ZSongguo/liuxia">此项目的GitHub地址</a></p> <h5 id="time"></h5> <h6 id="dexin">Copyright © 2021-2022 砸松果</h6> <script>
 					window.setInterval("time()",1000);

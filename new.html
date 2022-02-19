@@ -7,20 +7,18 @@
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
 		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
 		<script src="jQuery_main.js"></script> 
+		<script src="script/checkLogin.js"></script> 
+		<script src="script/addKaoCoin.js"></script> 
 	</head> 
 	<body onload="test()"> 
-		<script>
-			function test(){
-				var	iflogin = localStorage.getItem("iflogin");
-				if (iflogin == "yes"){}
-					else{
-						window.location.href="index.html";
-					}
-				}
-		</script> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
+		</noscript> 
+		<h1>1.2.7.8</h1> 
+		<p>1.提升安全性</p> <a href="index-after-login.html"><button>我知道了:)</button></a> 
 		<h1>1.2.7.6</h1> 
 		<p>1.优化页面设计</p> 
-		<p>2.提升登录系统的安全性</p> <a href="index-after-login.html"><button>我知道了:)</button></a> 
+		<p>2.提升登录系统的安全性</p> 
 		<h1>1.2.7.5</h1> 
 		<p>1.加密了密码，加强了安全性</p> 
 		<p>2.新增若干nothing</p> 

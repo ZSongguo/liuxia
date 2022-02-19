@@ -1,0 +1,67 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-尻币兑换</title> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+		<script src="../script/checkLogin.js"></script> 
+		<script src="../script/showKaoCoin.js"></script> 
+		<script src="../script/addKaoCoin.js"></script> 
+	</head> 
+	<body onload="test(),iflx()"> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
+		</noscript> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
+		<p id="liuxiaView"></p> 
+		<p style="color: blue;" id="congratulations"></p>az<small>说明：10尻币 » 1LX，不会自动兑换，需手动前往此页面兑换<br>兑换LX会清空尻币</small> 
+		<br> 
+		<br> <button onclick="changeLX()">兑换LX</button> 
+		<br> 
+		<br><button onclick="clearLX()">清空LX</button> 
+		<br> 
+		<br><b><small onclick="whatLX()">什么是LX？</small></b> 
+		<script>
+			function whatLX(){
+				window.alert('当我们在表示一个难以表达或者很大的数字时，就会用\LX单位\来表达\n现在，它被引入到了这个游戏当中，这个模块的代码我是乱写的（搞不明白乁( •_• )ㄏ），有什么bug及时向我反馈^_^');
+			}
+		</script> 
+		<script>
+			function clearLX(){
+				lx2 = localStorage.getItem("liuxia");
+				liuxia = localStorage.getItem("kaocoin");
+				lxcount =+liuxia * 0.1 + +lx2;
+				lxcount = null;
+				localStorage.removeItem("liuxia");
+				window.alert("清空成功！LX数量为："+ lxcount);
+				document.getElementById('liuxiaView').innerHTML="当前LX数量为: "+ lxcount;
+			}
+		</script> 
+		<script>
+			function changeLX(){
+				lx2 = localStorage.getItem("liuxia");
+				liuxia = localStorage.getItem("kaocoin");
+				lxcount = +liuxia * 0.1 + +lx2;
+				document.getElementById('liuxiaView').innerHTML="当前LX数量为: "+ lxcount;
+				window.alert('兑换成功，当前LX数量为'+lxcount);
+				localStorage.setItem("kaocoin","0");
+				localStorage.setItem("liuxia",+lxcount);
+			}
+		</script> 
+		<script>
+			function iflx(){
+				lx2 = localStorage.getItem("liuxia");
+				liuxia = localStorage.getItem("kaocoin");
+				lxcount =+liuxia * 0.1 + +lx2;
+				if (lxcount >= 1.2){
+					document.getElementById('congratulations').innerHTML="看来你已经精通LX了呢！(｡•̀ᴗ-)✧";
+				}
+				else if (lxcount <0.6){
+					document.getElementById('congratulations').innerHTML="还是需要多努力啊！";
+				}
+			}
+		</script>  
+	</body>
+</html>

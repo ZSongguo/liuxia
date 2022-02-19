@@ -1,0 +1,44 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-感谢列表</title> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+		<script src="../script/checkLogin.js"></script> 
+		<script src="../script/addKaoCoin.js"></script> 
+	</head> 
+	<body onload="test()"> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
+		</noscript> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="index.html";
+					}
+				}
+		</script> 
+		<p>感谢<a href="https://vercel.com/">Vercel</a>提供页面托管服务</p> 
+		<p>感谢<a href="https://www.cloudflare.com">Cloudflare</a>提供Cloudflare Pages页面托管服务</p> 
+		<p>感谢小米提供了免费商用的MiSans字体，还挺好看的:-)</p> 
+		<p>感谢<a href="https://github.com/">GitHub</a>为本站提供GitHub Pages网页托管服务</p> 
+		<p>感谢HopWeb Editor网页代码编辑器</p> 
+		<p>感谢Git提供了便捷的仓库管理服务</p> 
+		<p>感谢Fusion App提供了网页套壳应用制作</p> 
+		<p>感谢<a href="https://busuanzi.ibruce.info/">不蒜子</a>提供网页访客计数服务</p> 
+		<p>感谢<a href="https://iconpark.oceanengine.com/">IconPark</a>提供图标</p> 
+		<p>感谢<a href="https://livere.com/">来必力</a>提供网页评论服务</p> 
+		<p>感谢js-sha256项目提供了SHA256加密服务</p> 
+		<p>感谢<a href="https://www.bootcdn.cn/">BootCDN</a>、<a href="https://cdnjs.com/">cdnjs</a>等提供了开源项目CDN服务</p> 
+		<br> 
+		<h2>使用到的开源项目</h2><b><small>本项目使用MIT开源协议在GitHub开源</small></b> 
+		<br><small>本项目离不开开源项目的支撑，在此向它们的作者表达强烈的感谢之情！</small> 
+		<p>登录密码加密部分使用到了<a href="https://github.com/emn178/js-sha256">js-sha256</a>项目</p> 
+		<p>彩蛋部分使用了<a href="https://github.com/jquery/jquery">jQuery</a>（其实好像没有必要？）</p>  
+	</body>
+</html>

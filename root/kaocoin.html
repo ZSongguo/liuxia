@@ -1,0 +1,74 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-尻币</title> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../jQuery_main.js"></script> 
+		<script src="../script/checkLogin.js"></script> 
+		<script src="../script/addKaoCoin.js"></script> 
+	</head> 
+	<body onload="test()"> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
+		</noscript> 
+		<p id="kaocoinview">当前尻币数量： 个</p> 
+		<script>
+			window.setInterval("refresh()",100);
+			function refresh(){
+				var kc = localStorage.getItem("kaocoin");
+				document.getElementById('kaocoinview').innerHTML="当前尻币数量: "+kc+" 个";
+			}
+		</script> <small id="tip">需要先启用尻币才能使用此功能（尻币数量为"null"即为未启用状态）</small> 
+		<br><button onclick="kao()" id="startkc">启用尻币</button> 
+		<br> 
+		<br><a href="kctosth.html"><button>兑换选项</button></a> 
+		<br> 
+		<br><button onclick="kaozero()">清空尻币并停止使用尻币功能</button> 
+		<br> 
+		<br><b><small onclick="showWhat()">什么是尻币？</small></b> 
+		<script>
+			function showWhat(){
+				window.alert("“尻币”是一种游戏内的虚拟物品\n当您选择了“应该做的”选项后，尻币就会增加，您可以在页面的左下角看到当前的尻币数量\n建议您在已经完整地游玩了一次游戏后清空尻币▼・ᴥ・▼\n说不定之后有其他关于尻币的选项呢！");
+			}
+		</script> 
+		<script>
+			kc = localStorage.getItem("kaocoin");
+			if (kc != null){
+				document.getElementById('tip').innerHTML="";
+			}
+		</script> 
+		<script>
+			function kao(){
+				localStorage.setItem("kaocoin", "0");
+				kc = localStorage.getItem("kaocoin");
+				window.alert("启用成功！您当前的尻币数量为"+kc+"个");
+				document.getElementById('tip').innerHTML="";
+			}
+		</script> 
+		<script>
+			function kaozero(){
+				localStorage.removeItem("kaocoin");
+				kc = localStorage.getItem("kaocoin");
+				window.alert("清空成功！您当前的尻币数量为"+kc+"个");
+				document.getElementById('tip').innerHTML='需要先启用尻币才能使用此功能（尻币数量为\u0022null\u0022即为未启用状态）';
+			}
+		</script> 
+		<script>
+			window.setInterval("ifkc()",10);
+			kc = localStorage.getItem("kaocoin");
+			function ifkc(){
+				if (kc != null){
+					document.getElementById('startkc').innerHTML="";
+					document.getElementById('startkc').style="background-color:#0081FF ;";
+				}
+				else{
+					document.getElementById('startkc').innerHTML="启用尻币";
+					document.getElementById('startkc').style="font-family: MiSans;background-color: #FFFFFF; font-size: 28px;border: 2px solid #0081FF;border-radius: 6px; color: #0081FF;transition-duration: 0.5s;";
+				}
+			}
+		</script>  
+	</body>
+</html>

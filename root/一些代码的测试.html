@@ -1,0 +1,82 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-test</title> 
+		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="style/style.css"> 
+	</head> 
+	<body onload="test()"> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
+		</noscript> 
+		<script src="jQuery_main.js"></script> 
+		<script src="https://cdn.jsdelivr.net/npm/js-base64@3.7.2/base64.min.js"></script> 
+		<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script> 
+		<script>
+			function test(){
+				var	iflogin = localStorage.getItem("iflogin");
+				if (iflogin == "yes"){}
+					else{
+						window.location.href="index.html";
+					}
+				}
+		</script> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
+		<script>
+			kcview = localStorage.getItem("kaocoin");
+			window.setInterval("changeKC()",1000);
+			function changeKC(){
+				document.getElementById('kaocoinView').innerHTML="当前尻币数量为: "+ kcview +" 个";
+			}
+		</script> 
+		<script>
+			function addKC(){
+				localStorage.setItem("kaocoin", +kcview+2);
+			}
+		</script> <button onclick="addKC()">kctest</button> 
+		<br> 
+		<br><button onclick="changeToLX()">test LX</button> <!--KC to LX--> 
+		<script>
+			function changeToLX(){
+				liuxia = localStorage.getItem("kaocoin");
+				lxcount = +liuxia * 0.1;
+				window.alert(lxcount);
+			}
+		</script> <!--JSON Login Data Save--> 
+		<p id="testMD5"></p> 
+		<script>
+			document.getElementById('testMD5').innerHTML="";
+		</script> 
+		<script>
+			function check(){
+				var un = md5(document.forms["login"]["username"].value);
+				var pw = md5(document.forms["login"]["password"].value);
+				var unv = Base64.encode(un);
+				var pwv = Base64.encode(pw);
+				if (unv == "NjcwYjE0NzI4YWQ5OTAyYWVjYmEzMmUyMmZhNGY2YmQ=" && pwv == unv){
+					localStorage.setItem("iflogin", "yes");
+					iflogin = localStorage.getItem("iflogin");
+					window.location.href="index-after-login.html";
+				}
+				else{
+					window.alert("用户名或密码错误！");
+				}
+			}
+		</script> 
+		<noscript> 
+			<h1>请启用JavaScript以正常访问此页面！！！</h1> 
+		</noscript> <b><p>请登录以进入网站！</p></b> 
+		<form name="login"> 
+			<p>用户名</p> 
+			<input type="text" name="username" required> 
+			<br> 
+			<br> 
+			<p>密码</p> 
+			<input type="password" name="password" required> 
+			<br> 
+			<br> 
+			<input type="button" onclick="check()" value="登录" id="loginButton"> 
+		</form>  
+	</body>
+</html>

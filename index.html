@@ -16,7 +16,7 @@
 		<script>
 			var	iflogin = localStorage.getItem("iflogin");
 			if (iflogin == "yes"){
-				window.location.href="index-after-login.html";
+				window.location.href="root/index-after-login.html";
 			}
 		</script> <!--密码经过了SHA256多层加密😅--> 
 		<script>
@@ -46,6 +46,18 @@
 			<br> 
 			<br> 
 			<input type="button" onclick="check()" value="登录" id="loginButton"> 
-		</form>  
+		</form> 
+		<br><b><small id="localStorage" onclick="showHelp()">游玩前请确认浏览器支持localStorage与JavaScript<br><br>点我了解localStorage</small></b> 
+		<script>
+			function showHelp(){
+				window.alert("只读的localStorage 属性允许你访问一个Document 源（origin）的对象 Storage；存储的数据将保存在浏览器会话中。localStorage 类似 sessionStorage，但其区别在于：存储在 localStorage 的数据可以长期保留；而当页面会话结束——也就是说，当页面被关闭时，存储在 sessionStorage 的数据会被清除 。应注意，无论数据存储在 localStorage 还是 sessionStorage ，它们都特定于页面的协议。另外，localStorage 中的键值对总是以字符串的形式存储。 (需要注意, 和js对象相比, 键值对总是以字符串的形式存储意味着数值类型会自动转化为字符串类型).\n（来自MDN）\n除非你用的浏览器是上古时代的产物或者你开启了隐私浏览模式，否则localStorage的问题你是不用担心的:0");
+			}
+		</script> 
+		<br> 
+		<br><b><small id="JavaScript" onclick="showHelpjs()">点我了解JavaScript</small></b> 
+		<script>
+			function showHelpjs(){
+			window.alert("JavaScript 编程语言允许你在 Web 页面上实现复杂的功能。如果你看到一个网页不仅仅显示静态的信息，而是显示依时间更新的内容，或者交互式地图，或者 2D/3D 动画图像，或者滚动的视频播放器，等等——你基本可以确定，这需要 JavaScript 的参与。\n（来自MDN）\n请确认你没有禁用JavaScript（使用了某些广告屏蔽插件并启用了“禁用JavaScript”功能）")}
+		</script>  
 	</body>
 </html>

@@ -25,6 +25,10 @@ b {
 	font-family: MiSansBold;
 }
 
+strong {
+	font-family: MiSansBold;
+}
+
 input {
 	font-family: MiSans;
 	background-color: #FFFFFF;

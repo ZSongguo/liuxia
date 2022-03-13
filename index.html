@@ -3,32 +3,24 @@
 	<head> 
 		<meta charset="UTF-8"> 
 		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Teacher Liuxia-登录</title> 
+		<title>登录</title> 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script> 
-		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
-		<script src="jQuery_main.js"></script> 
 	</head> 
 	<body> 
 		<noscript> 
 			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
-		</noscript> 
-		<script>
-			var	iflogin = localStorage.getItem("iflogin");
-			if (iflogin == "yes"){
-				window.location.href="root/index-after-login.html";
-			}
-		</script> <!--密码经过了SHA256多层加密😅--> 
+		</noscript> <!--密码经过了SHA256多层加密😅--> 
 		<script>
 			function check(){
 				var u = document.forms["login"]["username"].value;
 				var p = document.forms["login"]["password"].value;
 				var un = sha256(sha256(u));
 				var pw = sha256(sha256(p));
-				if (un === "27bfaa8f76fe30db4d3d2fec408d0b29a772bdd3bf5ee330951233473d94d0e9" && pw === un){
+				if (un == "f422cce4a3b769e00e1b88b0e5d14b752e6ef22fa16882efd37e2f71eed33f51" && pw == un){
 					localStorage.setItem("iflogin", "yes");
 					iflogin = localStorage.getItem("iflogin");
-					window.location.href="index-after-login.html";
+					window.location.href="root/index-after-login.html";
 				}
 				else{
 					window.alert("用户名或密码错误！");

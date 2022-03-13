@@ -1,0 +1,80 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-商城</title> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../script/checkLogin.js"></script> 
+		<script src="../script/EasyCodeTools.js"></script> 
+		<script src="../script/showKaoCoin.js"></script> 
+		<script src="../script/addKaoCoin.js"></script> 
+	</head> 
+	<body onload="test(),showmzyq(),showcjq()"> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=../errorjs.html"> 
+		</noscript> <small><b>当前商品</b></small> 
+		<div id="mzyqshop" style="background-color: #00acff;border-radius: 6px;"> 
+			<p>免作业券</p> <small id="mzyqCount"></small> 
+			<br><button onclick="kcToMzyq()">兑换（需要尻币30个）</button> 
+			<br> 
+		</div> 
+		<div id="cjqshop" style="background-color: #00acff;border-radius: 6px; "> 
+			<p>抽奖券</p> <small id="cjqView"></small> 
+			<br> <button onclick="kcToCjq()">兑换（需要尻币20个）</button> 
+			<br> 
+			<br><button id="random" onclick="window.location.href='random.html';"></button> 
+		</div> 
+		<script>
+			function kcToCjq(){
+				let cjq = localStorage.getItem("cjq");
+				let cjqkc = localStorage.getItem("kaocoin");
+				if (+cjqkc >= 20){
+					localStorage.setItem("cjq",+cjq +1);
+					localStorage.setItem("kaocoin", +cjqkc-20);
+					window.alert('兑换成功！');
+					showcjq();
+					changeKC();
+				}
+				else{
+					window.alert('尻币不足！');
+				}
+			}
+		</script> 
+		<script>
+			function showcjq(){
+				let cjq = localStorage.getItem("cjq");
+				document.getElementById("cjqView").innerHTML="当前拥有数量：" + cjq;
+				if (cjq > 0){
+					changeElement("random","使用抽奖券进行抽奖",false);
+				}
+				else{
+					changeElement("random","",true);
+				}
+			}
+		</script> 
+		<script>
+			function showmzyq(){
+				let mzyq = localStorage.getItem("mzyq");
+				document.getElementById("mzyqCount").innerHTML="当前拥有数量：" + mzyq;
+			}
+		</script> 
+		<script>
+			function kcToMzyq(){
+				let mzyq = localStorage.getItem("mzyq");
+				let mzyqkc = localStorage.getItem("kaocoin");
+				if (+mzyqkc >= 30){
+					localStorage.setItem("mzyq",+mzyq +1);
+					localStorage.setItem("kaocoin", +mzyqkc-30);
+					window.alert('兑换成功！');
+					showmzyq();
+					changeKC();
+				}
+				else{
+					window.alert('尻币不足！');
+				}
+			}
+		</script>  
+	</body>
+</html>

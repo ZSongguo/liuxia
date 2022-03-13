@@ -1,6 +1,7 @@
-var	iflogin = localStorage.getItem("iflogin");
+window.setInterval("test()",1);
 function test(){
+    var	iflogin = localStorage.getItem("iflogin");
     if (iflogin != "yes"){
-        window.location.href="https://liuxia.vercel.app/index.html";
+        window.location.href="../index.html";
     }
 }

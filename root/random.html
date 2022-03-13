@@ -1,0 +1,85 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-抽奖</title> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../script/checkLogin.js"></script> 
+		<script src="../script/EasyCodeTools.js"></script> 
+		<script src="../script/addKaoCoin.js"></script> 
+		<script src="../script/showKaoCoin.js"></script> 
+	</head> 
+	<body onload="test(),showcjq()"> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=../errorjs.html"> 
+		</noscript> <small id="kaocoinView">当前尻币数量： 个</small> <b> <p>点击抽奖</p></b> 
+		<br><small id="cjqView"></small> 
+		<div onclick="choujiang()" title="点击抽奖" style="border-radius: 6px;background-color: #2c73d2;height: 400px;width: 400px;margin-left: 21%;"> 
+			<img alt="抽奖" src="../image/gift.png" style="margin-top: 20%;"> 
+		</div> 
+		<script>
+			function showcjq(){
+				var cjq = localStorage.getItem("cjq");
+				document.getElementById("cjqView").innerHTML="当前抽奖券数量：" + cjq;
+			}
+		</script> 
+		<script>
+			window.setInterval("showcjq()",100);
+			var cjq = localStorage.getItem("cjq");
+			function choujiang(){
+				if (cjq < 1){
+					window.alert("抽奖券不足，需要一张抽奖券！");
+				}
+				else{
+					var cjq = localStorage.getItem("cjq");
+					localStorage.setItem("cjq",cjq-1);
+					showcjq();
+					//抽奖部分，使用到了随机数
+					var cj = Math.random();
+					if (0.05 < cj < 0.1){
+						var cjview = "mzyq";
+						window.alert("你抽到了：1张免作业券！");
+						let localmzyq = localStorage.getItem("mzyq");
+						localStorage.setItem("mzyq",+localmzyq+1);
+					}
+					else if (0.1 < cj < 0.3){
+						var cjview = "20kc";
+						window.alert("你抽到了：20个尻币！");
+						let localkc = localStorage.getItem("kaocoin");
+						localStorage.setItem("kaocoin",+localkc+20);
+					}
+					else if (0.3 < cj < 0.8){
+						var cjview = "5kc";
+						window.alert("你抽到了：5个尻币！");
+						let localkc = localStorage.getItem("kaocoin");
+						localStorage.setItem("kaocoin",+localkc+5);
+					}
+					else if (0.8 < cj < 0.85){
+						var cjview = "1cjq";
+						window.alert("你抽到了：1张抽奖券！");
+						let localcjq = localStorage.getItem("cjq");
+						localStorage.setItem("cjq",+localcjq+1);
+					}
+					else if (0.85 < cj < 0.98){
+						var cjview = "3mzyq";
+						window.alert("你抽到了：3张免作业券！");
+						let localmzyq = localStorage.getItem("mzyq");
+						localStorage.setItem("mzyq",+localmzyq+3);
+					}
+					else if (0.98 < cj < 1){
+						var cjview = "50kc";
+						window.alert("你抽到了：50个尻币！");
+						let localkc = localStorage.getItem("kaocoin");
+						localStorage.setItem("kaocoin",+localkc+50);
+					}
+					else if (0 < cj < 0.05){
+						var cjview = "nothing";
+						window.alert("什么也没抽到😅");
+					}
+				}
+			}
+		</script>  
+	</body>
+</html>

@@ -6,38 +6,33 @@
 		<title>Teacher Liuxia-晚上</title> 
 		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
 		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
-		<script src="../jQuery_main.js"></script> 
 		<script src="../script/checkLogin.js"></script> 
 		<script src="../script/showKaoCoin.js"></script> 
 		<script src="../script/addKaoCoin.js"></script> 
+		<script src="../script/EasyCodeTools.js"></script> 
 	</head> 
 	<body onload="test()"> 
 		<noscript> 
 			<meta http-equiv="Refresh" content="0; url=../errorjs.html"> 
 		</noscript> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
-		<p id="lx">(走进宿舍)为什么还不关灯?!</p> 
-		<img id="light" src="../image/on.png"> 
-		<h6>第一次双击关灯，之后只需单击</h6> 
+		<p id="lx">(走进宿舍)<br>为什么还不关灯?!</p> 
+		<img id="lightImg" src="../image/on.png" onclick="turnLight()" title="单击以关灯"> 
 		<script>
-			function fun(flag){
-				var light = document.getElementById("light");
-				light.onclick = function(){
-					if(flag){
-						light.src = "../image/on.png";
-						flag = false;
-						document.getElementById('lx').innerHTML="还开什么灯?!";
-					}
-					else{
-						light.src = "../image/off.png";
-						flag = true;
-						document.getElementById('lx').innerHTML="501这周不要给我出现扣分啊!";
-					}
+			function turnLight(){
+				var light = document.getElementById("lightImg");
+				var lightSrc = light.getAttribute("src");
+				if (lightSrc == "../image/on.png"){
+					light.src="../image/off.png";
+					changeElement("lx","501这周不要给我出现扣分啊！");
+				}
+				else{
+					light.src="../image/on.png";
+					changeElement("lx","为什么还不关灯?!");
 				}
 			}
 		</script> 
-		<script>
-			fun(true);
-		</script><button onclick="talk(),addKC()" id="stay">留下</button> 
+		<br> 
+		<br><button onclick="talk(),addKC()" id="stay">留下</button> 
 		<br> 
 		<br><a href="../root/game.html"><button onclick="window.alert('周一过去了。感谢游玩!您可以继续游玩周二')">离开</button></a> 
 		<script>

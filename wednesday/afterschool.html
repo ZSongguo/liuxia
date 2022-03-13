@@ -1,0 +1,49 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Teacher Liuxia-交作业</title> 
+		<link rel="shortcut icon" href="../favicon.png" type="image/x-icon"> 
+		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../script/checkLogin.js"></script> 
+		<script src="../script/showKaoCoin.js"></script> 
+		<script src="../script/addKaoCoin.js"></script> 
+		<script src="../script/EasyCodeTools.js"></script> 
+	</head> 
+	<body onload="test()"> 
+		<noscript> 
+			<meta http-equiv="Refresh" content="0; url=../errorjs.html"> 
+		</noscript> <small id="kaocoinView" style="position:fixed;bottom: 0;left: 1%;">当前尻币数量</small> 
+		<p id="text">漫长的晚修结束了，到了交作业的时间</p> <a id="toGamePageLink"><button id="toGamePage"></button></a> 
+		<br> 
+		<br><button onclick="handIn()" id="handin">老老实实交数学作业</button> 
+		<br> 
+		<br><button onclick="useMZYQ()" id="Mzyq">使用免作业券</button> 
+		<script>
+			changeElement("toGamePage","",true);
+			function handIn(){
+				changeElement("text","把作业丢给了组长，然后离开了教室……");
+				changeElement("handin","",true);
+				changeElement("toGamePage","离开",false);
+				changeElement("Mzyq","",true);
+				document.getElementById("toGamePageLink").href="../root/game.html";
+			}
+		</script> 
+		<script>
+			function useMZYQ(){
+				var mzyq = localStorage.getItem("mzyq");
+				if (+mzyq >= 1){
+					localStorage.setItem("mzyq",+mzyq-1);
+					var mzyq = localStorage.getItem("mzyq");
+					window.alert("使用了免作业券，还剩下"+mzyq+"张免作业券");
+					changeElement("Mzyq","",true);
+					changeElement("handin","",true);
+				}
+				else{
+					window.alert("免作业券不足，当前数量"+mzyq+"，需要1张免作业券");
+				}
+			}
+		</script>  
+	</body>
+</html>

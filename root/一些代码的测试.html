@@ -6,6 +6,7 @@
 		<title>Teacher Liuxia-test</title> 
 		<link rel="shortcut icon" href="favicon.png" type="image/x-icon"> 
 		<link rel="stylesheet" type="text/css" href="../style/style.css"> 
+		<script src="../script/EasyCodeTools.js"></script> 
 	</head> 
 	<body onload="test()"> 
 		<noscript> 
@@ -69,7 +70,7 @@
 		</noscript> <b><p>请登录以进入网站！</p></b> 
 		<form name="login"> 
 			<p>用户名</p> 
-			<input type="text" name="username" required> 
+			<input type="text" name="username" required id="user"> 
 			<br> 
 			<br> 
 			<p>密码</p> 
@@ -77,6 +78,12 @@
 			<br> 
 			<br> 
 			<input type="button" onclick="check()" value="登录" id="loginButton"> 
-		</form>  
+		</form> <button onclick="haha()">测试form</button> 
+		<script>
+			function haha(){
+				var test = getForm("user");
+				console.log(test);
+			}
+		</script>  
 	</body>
 </html>

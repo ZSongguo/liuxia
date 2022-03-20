@@ -29,6 +29,7 @@
 			window.setInterval("showcjq()",100);
 			var cjq = localStorage.getItem("cjq");
 			function choujiang(){
+				var cjq = localStorage.getItem("cjq");
 				if (cjq < 1){
 					window.alert("抽奖券不足，需要一张抽奖券！");
 				}
@@ -38,13 +39,13 @@
 					showcjq();
 					//抽奖部分，使用到了随机数
 					var cj = Math.random();
-					if (0.05 < cj < 0.1){
+					if (0 < cj < 0.2){
 						var cjview = "mzyq";
 						window.alert("你抽到了：1张免作业券！");
 						let localmzyq = localStorage.getItem("mzyq");
 						localStorage.setItem("mzyq",+localmzyq+1);
 					}
-					else if (0.1 < cj < 0.3){
+					else if (0.2 < cj < 0.3){
 						var cjview = "20kc";
 						window.alert("你抽到了：20个尻币！");
 						let localkc = localStorage.getItem("kaocoin");
@@ -62,19 +63,19 @@
 						let localcjq = localStorage.getItem("cjq");
 						localStorage.setItem("cjq",+localcjq+1);
 					}
-					else if (0.85 < cj < 0.98){
+					else if (0.85 < cj < 0.9){
 						var cjview = "3mzyq";
 						window.alert("你抽到了：3张免作业券！");
 						let localmzyq = localStorage.getItem("mzyq");
 						localStorage.setItem("mzyq",+localmzyq+3);
 					}
-					else if (0.98 < cj < 1){
+					else if (0.9 < cj < 0.95){
 						var cjview = "50kc";
 						window.alert("你抽到了：50个尻币！");
 						let localkc = localStorage.getItem("kaocoin");
 						localStorage.setItem("kaocoin",+localkc+50);
 					}
-					else if (0 < cj < 0.05){
+					else{
 						var cjview = "nothing";
 						window.alert("什么也没抽到😅");
 					}

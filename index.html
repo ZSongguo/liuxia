@@ -21,13 +21,13 @@
 		</noscript> <!--密码经过了SHA256多层加密😅--> 
 		<script>
 			function check(){
-				var u = document.forms["login"]["username"].value;
-				var p = document.forms["login"]["password"].value;
-				var un = sha256(sha256(u));
-				var pw = sha256(sha256(p));
+				var username = document.getElementById("username").value;
+				var password = document.getElementById("password").value;
+				var un = sha256(sha256(username));
+				var pw = sha256(sha256(password));
 				if (un == "f422cce4a3b769e00e1b88b0e5d14b752e6ef22fa16882efd37e2f71eed33f51" && pw == un){
 					localStorage.setItem("iflogin",true);
-					iflogin = localStorage.getItem("iflogin");
+					var iflogin = localStorage.getItem("iflogin");
 					window.location.href="root/index-after-login.html";
 				}
 				else{
@@ -40,10 +40,10 @@
 			<h1>请启用JavaScript以正常访问此页面！！！</h1> 
 		</noscript> <b><p>请登录以进入网站！</p></b> 
 		<form name="login" id="LoginForm"> 
-			<input type="text" name="username" placeholder="用户名" required> 
+			<input type="text" id="username" placeholder="用户名" required> 
 			<br> 
 			<br> 
-			<input type="password" name="password" placeholder="密码" required> 
+			<input type="password" id="password" placeholder="密码" required> 
 			<br> 
 			<br> 
 			<input type="button" onclick="check()" value="登录" id="loginButton"> 

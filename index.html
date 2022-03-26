@@ -25,9 +25,8 @@
 				var password = document.getElementById("password").value;
 				var un = sha256(sha256(username));
 				var pw = sha256(sha256(password));
-				if (un == "f422cce4a3b769e00e1b88b0e5d14b752e6ef22fa16882efd37e2f71eed33f51" && pw == un){
+				if (un === "f422cce4a3b769e00e1b88b0e5d14b752e6ef22fa16882efd37e2f71eed33f51" && pw === un){
 					localStorage.setItem("iflogin",true);
-					var iflogin = localStorage.getItem("iflogin");
 					window.location.href="root/index-after-login.html";
 				}
 				else{
@@ -45,7 +44,8 @@
 			<br> 
 			<input type="password" id="password" placeholder="密码" required> 
 			<br> 
-			<br> <button onclick="check()">登录</button> 
+			<br> 
+			<input value="登录" onclick="check()" type="button"> 
 		</form> 
 		<br><small id="localStorage" onclick="showHelp()">访问前请确认浏览器支持localStorage与JavaScript<br><br><b>点我了解localStorage</b></small> 
 		<script>

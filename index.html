@@ -8,6 +8,14 @@
 		<link rel="stylesheet" type="text/css" href="style/style.css"> 
 	</head> 
 	<body> 
+		<script>
+			
+			//判断日期是否属于开放时间
+			var today = new Date().getDay();
+			if (today != "6" && today !="0"){
+				window.location.href="closetime.html";
+			}
+		</script> 
 		<noscript> 
 			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
 		</noscript> <!--密码经过了SHA256多层加密😅--> 
@@ -18,7 +26,7 @@
 				var un = sha256(sha256(u));
 				var pw = sha256(sha256(p));
 				if (un == "f422cce4a3b769e00e1b88b0e5d14b752e6ef22fa16882efd37e2f71eed33f51" && pw == un){
-					localStorage.setItem("iflogin", "yes");
+					localStorage.setItem("iflogin",true);
 					iflogin = localStorage.getItem("iflogin");
 					window.location.href="root/index-after-login.html";
 				}
@@ -40,7 +48,7 @@
 			<br> 
 			<input type="button" onclick="check()" value="登录" id="loginButton"> 
 		</form> 
-		<br><small id="localStorage" onclick="showHelp()">游玩前请确认浏览器支持localStorage与JavaScript<br><br><b>点我了解localStorage</b></small> 
+		<br><small id="localStorage" onclick="showHelp()">访问前请确认浏览器支持localStorage与JavaScript<br><br><b>点我了解localStorage</b></small> 
 		<script>
 			function showHelp(){
 				window.alert("只读的localStorage 属性允许你访问一个Document 源（origin）的对象 Storage；存储的数据将保存在浏览器会话中。localStorage 类似 sessionStorage，但其区别在于：存储在 localStorage 的数据可以长期保留；而当页面会话结束——也就是说，当页面被关闭时，存储在 sessionStorage 的数据会被清除 。应注意，无论数据存储在 localStorage 还是 sessionStorage ，它们都特定于页面的协议。另外，localStorage 中的键值对总是以字符串的形式存储。 (需要注意, 和js对象相比, 键值对总是以字符串的形式存储意味着数值类型会自动转化为字符串类型).\n（来自MDN）\n除非你用的浏览器是上古时代的产物或者你开启了隐私浏览模式，否则localStorage的问题你是不用担心的:0");

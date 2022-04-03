@@ -19,45 +19,28 @@
 		<noscript> 
 			<meta http-equiv="Refresh" content="0; url=errorjs.html"> 
 		</noscript> <!--密码经过了SHA256多层加密😅--> 
+		<p>请登录以进入网站</p> 
+		<form> 
+			<input type="text" placeholder="用户名" id="username"> 
+			<br> 
+			<br> 
+			<input type="password" placeholder="密码" id="password"> 
+			<br> 
+			<br> 
+			<input type="button" onclick="login()" value="登录"> 
+		</form> 
 		<script>
-			function check(){
-				var username = document.getElementById("username").value;
-				var password = document.getElementById("password").value;
-				var un = sha256(sha256(username));
-				var pw = sha256(sha256(password));
-				if (un === "f422cce4a3b769e00e1b88b0e5d14b752e6ef22fa16882efd37e2f71eed33f51" && pw === un){
-					localStorage.setItem("iflogin",true);
+			function login(){
+				var username = sha256(sha256(document.getElementById("username").value));
+				var password = sha256(sha256(document.getElementById("password").value));
+				if (username === "f422cce4a3b769e00e1b88b0e5d14b752e6ef22fa16882efd37e2f71eed33f51" && password === "f422cce4a3b769e00e1b88b0e5d14b752e6ef22fa16882efd37e2f71eed33f51"){
+					localStorage.setItem("login",true);
 					window.location.href="root/index-after-login.html";
 				}
 				else{
-					document.getElementById("LoginForm").reset();
 					window.alert("用户名或密码错误！");
 				}
 			}
-		</script> 
-		<noscript> 
-			<h1>请启用JavaScript以正常访问此页面！！！</h1> 
-		</noscript> <b><p>请登录以进入网站！</p></b> 
-		<form name="login" id="LoginForm"> 
-			<input type="text" id="username" placeholder="用户名" required> 
-			<br> 
-			<br> 
-			<input type="password" id="password" placeholder="密码" required> 
-			<br> 
-			<br> 
-			<input value="登录" onclick="check()" type="button"> 
-		</form> 
-		<br><small id="localStorage" onclick="showHelp()">访问前请确认浏览器支持localStorage与JavaScript<br><br><b>点我了解localStorage</b></small> 
-		<script>
-			function showHelp(){
-				window.alert("只读的localStorage 属性允许你访问一个Document 源（origin）的对象 Storage；存储的数据将保存在浏览器会话中。localStorage 类似 sessionStorage，但其区别在于：存储在 localStorage 的数据可以长期保留；而当页面会话结束——也就是说，当页面被关闭时，存储在 sessionStorage 的数据会被清除 。应注意，无论数据存储在 localStorage 还是 sessionStorage ，它们都特定于页面的协议。另外，localStorage 中的键值对总是以字符串的形式存储。 (需要注意, 和js对象相比, 键值对总是以字符串的形式存储意味着数值类型会自动转化为字符串类型).\n（来自MDN）\n除非你用的浏览器是上古时代的产物或者你开启了隐私浏览模式，否则localStorage的问题你是不用担心的:0");
-			}
-		</script> 
-		<br> 
-		<br><b><small id="JavaScript" onclick="showHelpjs()">点我了解JavaScript</small></b> 
-		<script>
-			function showHelpjs(){
-			window.alert("JavaScript 编程语言允许你在 Web 页面上实现复杂的功能。如果你看到一个网页不仅仅显示静态的信息，而是显示依时间更新的内容，或者交互式地图，或者 2D/3D 动画图像，或者滚动的视频播放器，等等——你基本可以确定，这需要 JavaScript 的参与。\n（来自MDN）\n请确认你没有禁用JavaScript（使用了某些广告屏蔽插件并启用了“禁用JavaScript”功能）")}
 		</script>  
 	</body>
 </html>
